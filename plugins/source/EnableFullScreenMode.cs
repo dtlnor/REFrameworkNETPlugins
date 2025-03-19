@@ -8,15 +8,17 @@ using REFrameworkNET.Callbacks;
 
 public class EnableFullScreenMode
 {
-    private static bool? IsRunningWilds => Environment.ProcessPath?.Contains("Wilds", StringComparison.CurrentCultureIgnoreCase);
+    private static bool IsRunningWilds => Environment.ProcessPath?.Contains("Wilds", StringComparison.CurrentCultureIgnoreCase) ?? false;
 
     private static readonly string[] WindowModeList = Enum.GetNames(typeof(via.render.WindowMode));
     private static int _windowMode = (int)via.render.Renderer.WindowMode;
+    private static bool _isWinOpen = true;
 
     [Callback(typeof(ImGuiRender), CallbackType.Pre)]
     public static void ImGuiCallback()
     {
-        if (!ImGui.Begin("FullScreenMode")) return;
+        if (!_isWinOpen) return;
+        if (!ImGui.Begin("FullScreenMode", ref _isWinOpen)) return;
 
         ImGui.Text("EnableFullScreenMode");
         if (ImGui.Combo("Fullscreen Mode", ref _windowMode, WindowModeList, WindowModeList.Length))
@@ -35,7 +37,7 @@ public class EnableFullScreenMode
     [PluginEntryPoint]
     public static void Main()
     {
-        if (!IsRunningWilds ?? true)
+        if (!IsRunningWilds)
         {
             API.LogWarning("This plugin is only compatible with Wilds");
             return;
