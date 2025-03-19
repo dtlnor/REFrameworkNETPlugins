@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FullScreenMode", "FullScreenMode\FullScreenMode.csproj", "{66345135-5D99-4519-81E9-DC5D59B8BCDD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{66345135-5D99-4519-81E9-DC5D59B8BCDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66345135-5D99-4519-81E9-DC5D59B8BCDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66345135-5D99-4519-81E9-DC5D59B8BCDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66345135-5D99-4519-81E9-DC5D59B8BCDD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
