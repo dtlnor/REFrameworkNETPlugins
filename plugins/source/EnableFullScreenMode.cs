@@ -14,19 +14,19 @@ public class EnableFullScreenMode
     private static int _windowMode = (int)via.render.Renderer.WindowMode;
     private static bool _isWinOpen = true;
 
-    [Callback(typeof(ImGuiRender), CallbackType.Pre)]
+    [Callback(typeof(ImGuiDrawUI), CallbackType.Pre)]
     public static void ImGuiCallback()
     {
         if (!_isWinOpen) return;
-        if (!ImGui.Begin("FullScreenMode", ref _isWinOpen)) return;
+        // if (!ImGui.Begin("FullScreenMode", ref _isWinOpen)) return;
 
-        ImGui.Text("EnableFullScreenMode");
+        // ImGui.Text("EnableFullScreenMode");
         if (ImGui.Combo("Fullscreen Mode", ref _windowMode, WindowModeList, WindowModeList.Length))
         {
             via.render.Renderer.WindowMode = (via.render.WindowMode)_windowMode;
         }
 
-        ImGui.End();
+        // ImGui.End();
     }
 
     [PluginExitPoint]
