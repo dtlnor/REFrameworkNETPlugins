@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+<Project>
     <ItemGroup>
       <Reference Include="application">
         <HintPath>..\plugins\managed\generated\REFramework.NET.application.dll</HintPath>
