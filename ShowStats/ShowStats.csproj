@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net8.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Compile Include="..\plugins\source\ShowStats.cs">
+        <Link>ShowStats.cs</Link>
+      </Compile>
+    </ItemGroup>
+
+    <Import Project="..\REFrameworkNETCommon.props" />
+</Project>
